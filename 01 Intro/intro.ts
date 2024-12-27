@@ -5,3 +5,5 @@ let myuser = {
 
 console.log(myuser)
 // console.log(myuser.email)
+
+export {}
