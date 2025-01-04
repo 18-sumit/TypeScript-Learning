@@ -29,7 +29,8 @@ sumit.greet()
 
 class User2 {
 
-    private _courseCount = 1
+    protected _courseCount = 1 // They are accessible inside this class as well as in anyclass which inherits this class (User2)
+    // private _courseCount = 1
     // as we cannot access it outside of class so we will make some getters to get its value not 
     // directly via getter and make some setter to set it's value via setter
 
@@ -56,5 +57,15 @@ class User2 {
     }
 }
 
+// declared a class but also want to use above classes 
+// Usescases were we want to use above class also but as a parent class inside an another class , and there is an concept of Inheritence
+// NOTE : It cannot acquire the property which is Private as they are only accessible within the class
+
+class SubUser2 extends User2 {
+    isFamily : boolean = true
+    changeCourseCount () {
+        this._courseCount = 4 // only accessible due to protected modifier
+    }
+}
 
 const Sumit = new User2("s@s.com", "sumit singh")
