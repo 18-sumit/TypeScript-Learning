@@ -23,16 +23,38 @@ sumit.greet()
 // sumit.state = "Maharshtra" // cannot manipulate due to readOnly property.
 // sumit.state // and even not accessible here due to private modifier.
 
+
+
 // Syntax 2 : This syntax will produce same javascript as above
 
 class User2 {
+
+    private _courseCount = 1
+    // as we cannot access it outside of class so we will make some getters to get its value not 
+    // directly via getter and make some setter to set it's value via setter
 
     readonly state: string = "Maharashtra "
     constructor(
         public email: string,
         public name: string,
         // private userId: string
-    ){}
+    ) { }
+
+    // basic ex of getter in TS :
+    get getAppleEmail(): string {
+        return `Apple${this.email}`
+    }
+
+    // basic getter to get courseCount
+    get courseCount(): number {
+        return this._courseCount
+    }
+
+    // basic setter to set courseCount value : Here's imp point to note that here setter explicity do not return anything
+    set courseCount(courseNum) {
+
+    }
 }
+
 
 const Sumit = new User2("s@s.com", "sumit singh")
