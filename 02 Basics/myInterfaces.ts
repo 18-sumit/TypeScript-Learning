@@ -10,11 +10,24 @@ interface User {
     getCoupon(couponname: string, value: number): number
 }
 
-const sumit: User = {
+// it's like inheritence:
+interface User {
+    githubToken : string
+}
+
+// new keyword extends 
+
+interface Admin extends User {
+    role : "admin" | "TA" | "learner"
+}
+
+const sumit: Admin = {
 
     dbId: 22,
     email: "s@s.com",
     userId: 111,
+    githubToken : "18-sumit",
+    role : "admin",
     //Interfaces can also describe the shape of a function.
     startTrail: () => {
         return "trail started"
@@ -29,7 +42,9 @@ const sumit: User = {
 
 
 
-// Type vs Interface :
-// Interface: Better for defining objects and class structures. Supports declaration merging.
-// Type: More flexible, allowing complex unions and intersections.
+// Type Aliases vs Interface :
+// Interface: Better for defining objects and class structures. Supports declaration merging. 
+// Interface is capable to extend the existing interface.
+
+// Type: More flexible, allowing complex unions and intersections. A type cannot be changed after being created
 
