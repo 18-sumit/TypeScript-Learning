@@ -12,7 +12,7 @@ abstract class TakePhoto {
     abstract getSepia(): void // abstract function cannot be given there implementation
     getReelTime(): number {
         // after some calculation
-        return 8
+        return 8 // in interface we cannot define the defination of function , but here we can 
     }
 }
 
@@ -38,6 +38,6 @@ class Instagram extends TakePhoto {
 }
 
 // we can make obj using class who is inheriting the abstract class(TakePhoto)
-const ss = new Instagram("Test", "test" , 3)
+const ss = new Instagram("Test", "test", 3)
 
 ss.getReelTime()
