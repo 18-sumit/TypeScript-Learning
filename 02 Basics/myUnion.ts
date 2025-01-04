@@ -10,7 +10,7 @@ id = 101;       // OK
 id = "abc123";  // OK
 // id = true;   // Error: Type 'boolean' is not assignable to type 'string | number'.
 
-
+// Type Aliases : 
 type User = {
     name: string,
     _id: number
