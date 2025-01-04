@@ -9,7 +9,7 @@ class TakePhoto {
     }
     getReelTime() {
         // after some calculation
-        return 8;
+        return 8; // in interface we cannot define the defination of function , but here we can 
     }
 }
 // this stops working in abstract class as it is not a class , it is an object made using constructor
