@@ -23,3 +23,19 @@ identifyFour({
     brand: "Milton",
     type: "Thermos"
 });
+//----------------------------------------***************************************-------------------------
+// Generics in Array and arrow Functions
+// function getSearchProducts<T>(products : Array<T>) : T {} // this is also an other way to declare array
+// normal function
+function getSearchProducts(products) {
+    // do some dataBase operations
+    const myIndex = 3;
+    return products[myIndex];
+}
+// arrow Function : Syntax 
+// classic arrow function :  const getMoreSearchProducts = () => {}
+const getMoreSearchProducts = (products) => {
+    // do some database calculations
+    const myIndex = 4;
+    return products[myIndex];
+};
