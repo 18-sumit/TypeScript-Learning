@@ -4,7 +4,7 @@
 class User1 {
     constructor(email, name) {
         this.state = "Uttarakhand"; //  Accessible only within the class
-        this.email = email; // this.email refers to the email on line no 2 and same goes for name 
+        this.email = email; // this.email refers to the email on line no 4 and same goes for name 
         this.name = name;
         this.state = this.state; // here it is accesible as it is within the class
     }
