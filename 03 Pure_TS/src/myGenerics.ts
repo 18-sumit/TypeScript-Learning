@@ -27,12 +27,34 @@ function identifyFour<T>(val: T): T {
 
 // This is our own defined type
 interface Bottle {
-    brand : string
-    type : string
+    brand: string
+    type: string
 }
 
 // and the above type is used in this generic
-identifyFour <Bottle> ({
-    brand : "Milton",
-    type : "Thermos"
+identifyFour<Bottle>({
+    brand: "Milton",
+    type: "Thermos"
 })
+
+//----------------------------------------***************************************-------------------------
+
+// Generics in Array and arrow Functions
+
+// function getSearchProducts<T>(products : Array<T>) : T {} // this is also an other way to declare array
+
+// normal function
+function getSearchProducts<T>(products: T[]): T {
+    // do some dataBase operations
+    const myIndex = 3
+    return products[myIndex]
+}
+
+// arrow Function : Syntax 
+// classic arrow function :  const getMoreSearchProducts = () => {}
+
+const getMoreSearchProducts = <T>(products: Array<T>): T => {
+    // do some database calculations
+    const myIndex = 4
+    return products[myIndex]
+}
