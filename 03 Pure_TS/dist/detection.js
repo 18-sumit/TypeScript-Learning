@@ -57,3 +57,9 @@ const fish = { swim: () => console.log("Swimming!") };
 const bird = { fly: () => console.log("Flying!") };
 move(fish); // Output: Swimming!
 move(bird); // Output: Flying!
+function getTrueShape(shape) {
+    if (shape.kind === "circle") {
+        return Math.PI * shape.radius ** 2;
+    }
+    return shape.side * shape.side;
+}

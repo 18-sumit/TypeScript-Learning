@@ -36,8 +36,8 @@ interface Admin {
     isAdmin: boolean
 }
 
-function checkForAdmin(account : User | Admin){
-    if("isAdmin" in account){
+function checkForAdmin(account: User | Admin) {
+    if ("isAdmin" in account) {
         return account.isAdmin
     }
 }
@@ -50,10 +50,10 @@ function checkForAdmin(account : User | Admin){
 //--------------------************************************--------------------------------------------
 // 3> instance of 
 
-function logvalue(x : Date | string){
-    if(x instanceof Date){
+function logvalue(x: Date | string) {
+    if (x instanceof Date) {
         console.log(x.toUTCString) // it is 100% sure that if x is here it will be date 
-    } else{
+    } else {
         console.log(x.toUpperCase)
     }
 }
@@ -89,3 +89,32 @@ const bird: Bird = { fly: () => console.log("Flying!") };
 
 move(fish); // Output: Swimming!
 move(bird); // Output: Flying!
+
+
+//----------------------------**********************************------------------------------------
+// 5> Discriminated Union
+
+interface Circle {
+    kind: "circle",
+    radius: number
+}
+
+interface Square {
+    kind: "square",
+    side: number
+}
+
+interface Rectangle {
+    kind: "rectangle",
+    length: number,
+    width: number
+}
+
+type Shape = Circle | Square
+
+function getTrueShape(shape : Shape){
+    if(shape.kind === "circle"){
+        return Math.PI * shape.radius ** 2
+    }
+    return shape.side * shape.side
+}
