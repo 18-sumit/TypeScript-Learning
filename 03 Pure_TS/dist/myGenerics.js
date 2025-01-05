@@ -18,3 +18,8 @@ function identifyThree(val) {
 function identifyFour(val) {
     return val;
 }
+// and the above type is used in this generic
+identifyFour({
+    brand: "Milton",
+    type: "Thermos"
+});
