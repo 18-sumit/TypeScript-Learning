@@ -58,3 +58,30 @@ const getMoreSearchProducts = <T>(products: Array<T>): T => {
     const myIndex = 4
     return products[myIndex]
 }
+
+
+//---------------------------------------**********************************---------------------------
+
+// Type parameter in Generic constraints
+
+interface Database {
+    connection: string
+    username: string
+    password: string
+}
+
+function anotherFunction<T, U extends Database>(valOne: T, valTwo: U): object {
+    return {
+        valOne,
+        valTwo
+    }
+}
+
+anotherFunction(
+    5, // valOne
+    { // valTwo
+        connection: "mongoDbconnectionstring",
+        username: "sumit18",
+        password: "passwordProtected"
+    }
+)
