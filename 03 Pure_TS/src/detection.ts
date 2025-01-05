@@ -110,11 +110,31 @@ interface Rectangle {
     width: number
 }
 
-type Shape = Circle | Square
+// we declared the rectangle interface but never used it means this code is not future proof 
+type Shape = Circle | Square | Rectangle
 
-function getTrueShape(shape : Shape){
-    if(shape.kind === "circle"){
+function getTrueShape(shape: Shape) {
+    if (shape.kind === "circle") {
         return Math.PI * shape.radius ** 2
     }
-    return shape.side * shape.side
+    // return shape.side * shape.side
 }
+
+
+// USE OF NEVER KEYWORD || Exhaustive checking 
+function getArea(shape: Shape) {
+
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius ** 2
+        case "square":
+            return shape.side * shape.side
+        case "rectangle":
+            return shape.length * shape.width
+        default:
+            const _defaultforshape : never = shape
+            return _defaultforshape
+    }
+}
+// The default case checks for unknown packages (unexpected shapes) and raises an alarm (never error).
+// The never type ensures your code handles all possible cases in a type-safe and robust way, preventing bugs when new cases are introduced
