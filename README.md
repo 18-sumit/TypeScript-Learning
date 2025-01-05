@@ -32,6 +32,25 @@ TypeScript-Learning/
 │   └── final.ts
 ```
 
+## 📥 Installing TypeScript
+
+To install TypeScript globally on your system:
+
+1. Make sure you have Node.js installed. Download it from [Node.js official site](https://nodejs.org/).
+
+2. Use the following command to install TypeScript globally:
+
+   ```bash
+   npm install -g typescript
+   ```
+
+3. Verify the installation by checking the TypeScript version:
+
+   ```bash
+   tsc --version
+   ```
+
+
 ## 🚀 Features
 
 - **01 Intro**: Basics of TypeScript including variables and introduction.
