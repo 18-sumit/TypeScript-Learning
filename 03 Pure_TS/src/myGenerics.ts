@@ -22,3 +22,17 @@ function identifyThree<Type>(val: Type): Type {
 function identifyFour<T>(val: T): T {
     return val
 }
+
+// we can define our type and pass it on to generic
+
+// This is our own defined type
+interface Bottle {
+    brand : string
+    type : string
+}
+
+// and the above type is used in this generic
+identifyFour <Bottle> ({
+    brand : "Milton",
+    type : "Thermos"
+})
