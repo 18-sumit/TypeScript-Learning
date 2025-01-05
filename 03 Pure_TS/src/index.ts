@@ -1,14 +1,14 @@
 // classes in TS :
 // Synatx 1 :
 class User1 {
-    public email: string // not even need to mention public as every attribute is public
+    public email: string // not even needed to mention public as every attribute is public
 
     name: string // these are nothing but attributes of a class
 
     private readonly state: string = "Uttarakhand" //  Accessible only within the class
 
     constructor(email: string, name: string) {
-        this.email = email; // this.email refers to the email on line no 2 and same goes for name 
+        this.email = email; // this.email refers to the email on line no 4 and same goes for name 
         this.name = name
         this.state = this.state // here it is accesible as it is within the class
     }
