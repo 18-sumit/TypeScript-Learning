@@ -85,3 +85,64 @@ anotherFunction(
         password: "passwordProtected"
     }
 )
+
+// ---------------------------------------*****************************------------------------------
+// class Types in Generics
+
+// Generic classes are templates for creating reusable class structures that can work with 
+// multiple types. Instead of hardcoding a specific type, you define a placeholder (like T) 
+// that can be replaced with any type when the class is used.
+
+
+// ex :  Define a generic class using the placeholder <T>
+
+class Storage<T> {
+    private items: T[] = []; // Array to store elements of type T
+
+    // Add an item to the storage
+    addItem(item: T): void {
+        this.items.push(item); // Add the item to the array
+    }
+
+    // Remove an item from the storage
+    removeItem(item: T): void {
+        if (typeof item === "object" && item !== null) {
+            // For objects, use a custom comparison to find the index
+            const index = this.items.findIndex((storedItem) =>
+                JSON.stringify(storedItem) === JSON.stringify(item)
+            );
+            if (index > -1) {
+                this.items.splice(index, 1); // Remove the item if found
+            }
+        } else {
+            // For primitive types, use indexOf
+            const index = this.items.indexOf(item);
+            if (index > -1) {
+                this.items.splice(index, 1); // Remove the item if found
+            }
+        }
+    }
+
+    // Get all items in the storage
+    getItems(): T[] {
+        return this.items;
+    }
+}
+
+
+
+// example1 
+
+const numberStorage = new Storage<number>(); // T is replaced by 'number
+numberStorage.addItem(10);
+numberStorage.addItem(20);
+numberStorage.removeItem(10);
+console.log(numberStorage.getItems()); // Output: [20]
+
+// example2
+
+const stringStorage = new Storage<string>();
+stringStorage.addItem("apple");
+stringStorage.addItem("banana");
+stringStorage.removeItem("apple");
+console.log(stringStorage.getItems()); // Output: ["banana"]
